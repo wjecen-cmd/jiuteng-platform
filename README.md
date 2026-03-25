@@ -1,93 +1,125 @@
-# 九藤智能工具平台
+# JT.SMART Platform
 
-整合版本 - Web + Server + App
+> 提示词优化工具 - 多端应用
 
-## 项目结构
+---
+
+## 📱 项目结构
 
 ```
-jiuteng-platform-integrated/
-├── web/          # Next.js Web 前端 (v0)
-├── server/       # Express 后端 API (Claude Code)
-├── app/          # Uni-app 跨端应用 (待开发)
-└── database/     # 数据库设计
+jiuteng-platform/
+├── web/              # 网站前端 (Next.js)
+├── server/           # 后端 API (Express + TypeScript)
+├── database/         # 数据库 (PostgreSQL / Supabase)
+├── desktop/          # 电脑客户端 (Tauri) - 待开发
+├── mobile/           # 手机客户端 (Uni-app) - 待开发
+└── shared/           # 多端共享代码 - 待开发
 ```
 
-## 技术栈
+---
 
-### Web 前端
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Radix UI
+## 🌐 网站端 (Web)
 
-### 后端
-- Node.js + Express
-- TypeScript
-- Supabase (PostgreSQL)
-- JWT 认证
+**技术栈**: Next.js 16 + React 19 + Tailwind CSS 4
 
-### App (计划中)
-- Uni-app
-- Vue 3
-- 跨端编译
+### 页面
 
-## 快速开始
+| 路径 | 功能 | 状态 |
+|------|------|------|
+| `/login` | 登录页 | ✅ |
+| `/chat` | AI 对话 | ✅ 框架 |
+| `/agent` | Agent 管理 | ✅ 框架 |
+| `/monitor` | 监控大屏 | ✅ 框架 |
+| `/shop` | API 商城 | ✅ 框架 |
+| `/workflow` | 工作流 | ✅ 框架 |
 
-### 1. 配置环境变量
+### 启动
 
 ```bash
-cd server
-cp .env.example .env
-# 编辑 .env 填入 Supabase 配置
-```
-
-### 2. 安装依赖
-
-```bash
-# 后端
-cd server
-npm install
-
-# 前端
-cd ../web
-npm install
-```
-
-### 3. 启动服务
-
-```bash
-# 后端 (端口 3000)
-cd server
-npm run dev
-
-# 前端 (端口 3001)
 cd web
+npm install
 npm run dev
 ```
 
-## API 接口
+---
+
+## ⚙️ 后端 API (Server)
+
+**技术栈**: Express + TypeScript + Supabase
+
+### 接口
 
 | 路径 | 说明 |
 |------|------|
-| GET /health | 健康检查 |
-| POST /api/auth/send-code | 发送验证码 |
-| POST /api/auth/login/phone | 手机登录 |
-| POST /api/auth/login | 账号登录 |
+| POST /api/auth/login | 登录 |
 | POST /api/chat/completions | AI 对话 |
-| GET /api/orders | 订单列表 |
-| POST /api/payment/wechat | 微信支付 |
+| GET /api/user/profile | 用户信息 |
 
-## 开发进度
+### 启动
 
-- [x] v0 UI 设计
-- [x] 后端路由结构
-- [ ] 数据库迁移
-- [ ] 前后端联调
-- [ ] Uni-app 开发
+```bash
+cd server
+npm install
+npm run dev
+```
 
-## 部署
+---
 
-- Web: Vercel / 云服务器
-- API: 云服务器
-- 数据库: Supabase
+## 🖥️ 电脑端 (Desktop)
+
+**技术栈**: Tauri 2.0 + React
+
+**状态**: 待开发
+
+---
+
+## 📲 手机端 (Mobile)
+
+**技术栈**: Uni-app (Vue 3)
+
+**支持平台**:
+- iOS App
+- Android App
+- 微信小程序
+- H5
+
+**状态**: 待开发
+
+---
+
+## 🗄️ 数据库
+
+**Supabase**: https://hidmcbxqjoecvzlumxiy.supabase.co
+
+### 表结构
+
+- users - 用户
+- orders - 订单
+- verification_codes - 验证码
+- monitored_servers - 服务器监控
+- monitored_domains - 域名监控
+
+---
+
+## 🔗 相关链接
+
+| 资源 | 地址 |
+|------|------|
+| GitHub | https://github.com/wjecen-cmd/jiuteng-platform |
+| 网站 | https://wjecen.vip |
+| Supabase | https://supabase.com |
+
+---
+
+## 📝 开发进度
+
+| 模块 | 进度 |
+|------|------|
+| 网站前端 | 60% |
+| 后端 API | 40% |
+| 电脑端 | 0% |
+| 手机端 | 0% |
+
+---
+
+**最后更新**: 2026-03-25
