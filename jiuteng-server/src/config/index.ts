@@ -1,0 +1,13 @@
+export const PORT = process.env.PORT || 3000;
+export const DB_HOST = process.env.DB_HOST || 'localhost';
+export const DB_PORT = parseInt(process.env.DB_PORT || '3306');
+export const DB_USER = process.env.DB_USER || 'root';
+export const DB_PASSWORD = process.env.DB_PASSWORD || '';
+export const DB_NAME = process.env.DB_NAME || 'jiuteng_platform';
+export const JWT_SECRET = process.env.JWT_SECRET || 'jiuteng_secret_key_for_jwt';
+export const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
+export const SMS_API_KEY = process.env.SMS_API_KEY || '';
+export const SMS_TEMPLATE_ID = process.env.SMS_TEMPLATE_ID || '';
+export const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || 'jiuteng_encryption_key_32_chars';
+export const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15分钟
+export const RATE_LIMIT_MAX = 100; // 每个IP最大请求数
